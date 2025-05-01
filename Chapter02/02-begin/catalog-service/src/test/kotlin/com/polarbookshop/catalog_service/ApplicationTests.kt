@@ -18,9 +18,7 @@ class ApplicationTests {
 //	}
 
 	@Test
-	fun whenPostRequestThenBookCreated() {
-		var expectedBook = Book("1234567890","Test Book","Test Author",9.99)
-
+	fun 책을_POST시_DB에_등록되야함() {
 		webTestClient!!.post()
             .uri("/api/v1/books")
 			.contentType(MediaType.APPLICATION_JSON)
@@ -43,12 +41,13 @@ class ApplicationTests {
 			.jsonPath("$.author").isEqualTo("Test Author")
 			.jsonPath("$.price").isEqualTo(9.99)
 
-
 	}
 }
 
 
 
+//var expectedBook = Book("1234567890","Test Book","Test Author",9.99)
+//
 //		webTestClient!!.post()
 //			.uri("/api/v1/books")
 //			.contentType(MediaType.APPLICATION_JSON)
